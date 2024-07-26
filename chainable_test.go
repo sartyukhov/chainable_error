@@ -12,7 +12,7 @@ import (
 
 func TestChainableError(t *testing.T) {
 	errChild := errors.New("child")
-	errBase := cherrors.NewChainableError("base")
+	errBase := cherrors.New("base")
 	errTopLevel := fmt.Errorf("top level error: %w", errBase.Wrap(errChild))
 
 	assert.Equal(t, "top level error: base: child", errTopLevel.Error())
@@ -27,7 +27,7 @@ func TestChainableError(t *testing.T) {
 func TestChainableErrorMultipleTimes(t *testing.T) {
 	errChildZero := errors.New("child0")
 	errChildOne := errors.New("child1")
-	errBase := cherrors.NewChainableError("base")
+	errBase := cherrors.New("base")
 	errTopLevelOne := fmt.Errorf("top level error: %w", errBase.Wrap(errChildZero))
 	// wrap other error to the same base error
 	errTopLevelTwo := fmt.Errorf("top level error: %w", errBase.Wrap(errChildOne))
@@ -44,7 +44,7 @@ func TestChainableErrorMultipleTimes(t *testing.T) {
 }
 
 func TestChainableErrorEmpty(t *testing.T) {
-	errBase := cherrors.NewChainableError("base")
+	errBase := cherrors.New("base")
 	errTopLevel := fmt.Errorf("top level error: %w", errBase)
 
 	assert.Equal(t, "top level error: base", errTopLevel.Error())

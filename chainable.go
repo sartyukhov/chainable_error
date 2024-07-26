@@ -10,7 +10,7 @@ type ChainableError struct {
 	childErr error
 }
 
-func NewChainableError(msg string) *ChainableError {
+func New(msg string) *ChainableError {
 	return &ChainableError{
 		baseErr: errors.New(msg),
 	}
