@@ -1,4 +1,4 @@
-module github.com/sartyukhov/chainable_error
+module github.com/sartyukhov/chainablerr
 
 go 1.15.0
 

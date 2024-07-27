@@ -1,5 +1,5 @@
 # Chainable Error
-[![Version](https://img.shields.io/badge/version-1.0.0-blue.svg)]()
+[![Version](https://img.shields.io/badge/version-1.0.3-blue.svg)]()
 
 Chainable error type allows create chainable and checkable errors.
 

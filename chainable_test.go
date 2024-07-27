@@ -1,4 +1,4 @@
-package chainableerror_test
+package chainablerr_test
 
 import (
 	"errors"
